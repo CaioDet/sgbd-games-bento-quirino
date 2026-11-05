@@ -41,3 +41,20 @@ CREATE TABLE TB_MISSAO (
     ID_Personagem INTEGER NOT NULL,
     FOREIGN KEY (ID_Personagem) REFERENCES TB_PERSONAGEM(ID_Personagem) ON DELETE CASCADE
 );
+
+-- 3. INSERINDO DADOS DE EXEMPLO (Popula as tabelas criadas)
+INSERT INTO TB_PERSONAGEM (Nome, Classe, Nivel, Xp_Atual) 
+VALUES ('Arthas', 'Guerreiro', 5, 1200);
+
+INSERT INTO TB_PERSONAGEM (Nome, Classe, Nivel, Xp_Atual) 
+VALUES ('Jaina', 'Mago', 4, 950);
+
+INSERT INTO TB_MISSAO (Titulo_Missao, Recompensa_Gold, Status_Missao, ID_Personagem) 
+VALUES ('Derrotar o Dragão', 500, 'Pendente', 1);
+
+INSERT INTO TB_MISSAO (Titulo_Missao, Recompensa_Gold, Status_Missao, ID_Personagem) 
+VALUES ('Recuperar o Tomo Perdido', 200, 'Concluida', 2);
+
+-- 4. SELECTS DE VISUALIZAÇÃO (Faz os atributos e colunas aparecerem na tela do SQLite Online)
+SELECT * FROM TB_PERSONAGEM;
+SELECT * FROM TB_MISSAO;
